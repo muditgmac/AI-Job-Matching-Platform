@@ -37,6 +37,7 @@ class MatchScore(BaseModel):
     experience_score: Optional[float] = None
     education_score: Optional[float] = None
     semantic_similarity: Optional[float] = None
+    explanation: Optional[Dict[str, Any]] = None
     rank: int
 
 

@@ -133,7 +133,8 @@ def match_candidates(
             resume_education=resume.education or [],
             job_description=job.description,
             job_skills=job.required_skills or [],
-            job_experience_level=job.experience_level
+            job_experience_level=job.experience_level,
+            job_preferred_skills=job.preferred_skills or []
         )
         
         # Update resume embedding if generated
@@ -169,7 +170,8 @@ def match_candidates(
             'skill_match_score': match_result['skill_match_score'],
             'experience_score': match_result['experience_score'],
             'education_score': match_result['education_score'],
-            'semantic_similarity': match_result['semantic_similarity']
+            'semantic_similarity': match_result['semantic_similarity'],
+            'explanation': match_result['explanation']
         })
     
     db.commit()
